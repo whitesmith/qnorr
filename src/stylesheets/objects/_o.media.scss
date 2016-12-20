@@ -1,0 +1,80 @@
+/*
+    OBJECTS.MEDIA
+    ----
+
+    The holy grail of layout.
+    Double check if you can't achieve it with the media object variations,
+    there's a great probability that you can.
+
+    more:
+    https://philipwalton.github.io/solved-by-flexbox/demos/media-object/
+    http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+
+
+    1. Wrapper powered by flexbox
+        1.1. Layout modifiers: order, horizontal and vertical alignment
+             This will modify it's direct descendents descend
+    2. This elements must be direct childs of [1].
+    3. The `o-media__figure` class could be use directly on <img> tags.
+       Ifimage is more complex like a figure with caption or a complex avatar
+       use as wrapper
+    4. As the with the figure class, `.o-media__body` could be use directly
+       on a text wrapper elemtent like <p>, for more complex structure use
+       as wrapper.
+
+* ========================================================================== */
+
+/* [1] */
+.o-media {
+   position: relative;
+   z-index: 2; //dealing possible parent with pseudo-elements;
+   display: flex;
+}
+
+   /* [2], [3] */
+   .o-media__figure {
+      margin-right: $g-spacing-unit * 2;
+   }
+
+   /* [2], [4] */
+   .o-media__body {
+      flex: 1;
+   }
+
+
+
+/* Vertical Alignment
+========================================================================== */
+
+.o-media--middle   { align-items: center; }
+.o-media--bottom   { align-items: flex-end; }
+.o-media--baseline { align-items: baseline; }
+
+
+
+/* Horizontal Alignment
+========================================================================== */
+
+// Reverse Direction
+.o-media--reverse {
+   flex-direction: row-reverse;
+
+   .o-media__figure {
+      margin-right: 0;
+      margin-left: $g-spacing-unit * 2;
+   }
+
+   .o-media__body {
+      display: flex;
+      justify-content: flex-end; //align items to right not text
+   }
+}
+
+
+/* Others
+========================================================================== */
+
+// Remove gutters
+.o-media--flush {
+   .o-media__figure { margin: 0 }
+}

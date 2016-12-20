@@ -1,0 +1,25 @@
+.s-debugging{
+
+   .o-grid__el,
+   .o-layout__el {
+
+      &:before{
+         content: 'class="'  attr(class) '"';
+         display: block;
+         font-size: 8px;
+         font-family: $g-monospace-font-family;
+         white-space: nowrap;
+         display: block;
+         overflow: auto;
+         text-overflow: ellipsis;
+         width: 100%;
+      }
+
+      .o-box{
+         padding: $grid-gutter;
+         margin-bottom: $grid-gutter;
+         height: 100%;
+      }
+
+   }
+}

@@ -1,0 +1,15 @@
+/*
+    SETTINGS.TRANSITIONS
+    ----
+
+
+     Use getTransition(key) function to extract or
+     just use map-get($transitions-map, 'key');
+* ==================================================== */
+
+
+$g-transitions-map: (
+	smooth: cubic-bezier(0.1, 0.82, 0.25, 1),
+	bounce: cubic-bezier(0.1, 0.82, 0.25, 1),
+	bouncy: cubic-bezier(0.0, 1.58, 0.7, 1.12)
+);

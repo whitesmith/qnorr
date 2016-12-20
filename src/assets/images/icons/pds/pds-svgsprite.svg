@@ -1,0 +1,12 @@
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="c-icon-pds-logo" viewBox="0 0 43 32">
+<title>pds-logo</title>
+<path class="path1" fill="currentColor" stroke="#fff" stroke-width="1.2075" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M23.339 4.622c-5.221 5.221-5.259 13.646-0.087 18.819l0.056 0.056 18.849-18.849 0.001-0.113c-5.173-5.173-13.598-5.134-18.819 0.087z"></path>
+<path class="path2" fill="currentColor" stroke="#fff" stroke-width="1.2075" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M38.799 26.724c5.221-5.221 5.259-13.646 0.087-18.819l-0.056-0.056-18.849 18.849-0.001 0.113c5.173 5.173 13.598 5.134 18.819-0.087z"></path>
+<path class="path3" fill="currentColor" stroke="#fff" stroke-width="1.2075" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M0.604 13.354c0-2.998 2.070-6.708 4.625-8.287l6.243-3.859v30.189h-10.868v-18.043z"></path>
+<path class="path4" fill="currentColor" stroke="#fff" stroke-width="1.2075" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M11.472 3.253v-2.046h7.386c0.030 0 0.060 0 0.090 0 8.209 0 14.863 6.758 14.863 15.094s-6.654 15.094-14.863 15.094c-0.030 0-0.060-0-0.090-0l-7.386 0v-28.143z"></path>
+<path class="path5" fill="currentColor" stroke="#fff" stroke-width="1.2075" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M0.604 1.208h18.717v18.717h-18.717v-18.717z"></path>
+</symbol>
+</defs>
+</svg>

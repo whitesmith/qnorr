@@ -1,0 +1,168 @@
+/*
+   SOCPES.RATIO
+   ----
+
+   [HIGHLY EXPERIEMENTAL]
+   Put any parent/childrend divs on flexbox steroids;
+
+   Why the scope and not modifier classes?
+   Sincerly I don't know.
+
+   Still haven't find a better way to give the flexibility and order independence
+   of the data attributes. Also some styles are scoped so that the [data-flex-item]
+   isn't required. But this could be changed
+
+   By default, reponsive breakpoints are based on the selected grid breakpoints
+
+
+* ========================================================================== */
+
+$s-flex-layout-breakpoints-list: $grid-breakpoints !default;
+/* Flex container */
+[data-flex-layout]{
+   display: flex;
+   flex-wrap: wrap; //beacuse those will be the most common cases
+}
+
+
+/* Flow
+========================================================================== */
+[data-flex-layout*="nowrap--"]       { flex-wrap: nowrap;}
+[data-flex-layout*="wrap-reverse--"] { flex-wrap: wrap-reverse;}
+
+[data-flex-layout*="row--"]         { flex-direction: row; }
+[data-flex-layout*="row-reverse--"] { flex-direction: row-reverse; }
+[data-flex-layout*="col--"]         { flex-direction: column; }
+[data-flex-layout*="col-reverse"] { flex-direction: column-reverse; }
+
+@each $breakpoint in $s-flex-layout-breakpoints-list{
+   @include mappy-bp($breakpoint){
+      [data-flex-layout*="nowrap\@#{$breakpoint} "]       { flex-wrap: nowrap;}
+      [data-flex-layout*="wrap-reverse\@#{$breakpoint} "] { flex-wrap: wrap-reverse;}
+      [data-flex-layout*="row\@#{$breakpoint} "]          { flex-direction: row; }
+      [data-flex-layout*="row-reverse\@#{$breakpoint} "]  { flex-direction: row-reverse; }
+      [data-flex-layout*="col\@#{$breakpoint} "]          { flex-direction: column; }
+      [data-flex-layout*="col-reverse\@#{$breakpoint} "]  { flex-direction: column-reverse; }
+   }
+}
+
+
+
+/* Vertical alignment
+========================================================================== */
+[data-flex-layout*="top--"] { align-items: flex-start; }
+[data-flex-layout*="middle--"] { align-items: center; }
+[data-flex-layout*="bottom--"] { align-items: flex-end; }
+[data-flex-layout*="baseline--"] { align-items: baseline; }
+
+@each $breakpoint in $s-flex-layout-breakpoints-list{
+   @include mappy-bp($breakpoint){
+      [data-flex-layout*="top\@#{$breakpoint}--"] { align-items: flex-start; }
+      [data-flex-layout*="middle\@#{$breakpoint}--"] { align-items: center; }
+      [data-flex-layout*="bottom\@#{$breakpoint}--"] { align-items: flex-end; }
+      [data-flex-layout*="baseline\@#{$breakpoint}--"] { align-items: baseline; }
+   }
+}
+
+
+
+/* Multi-row alignment
+========================================================================== */
+[data-flex-layout*="content-start--"]   { align-content: flex-start; }
+[data-flex-layout*="content-center--"]  { align-content: center; }
+[data-flex-layout*="content-end--"]     { align-content: flex-end; }
+[data-flex-layout*="content-around--"]  { align-content: space-around; }
+[data-flex-layout*="content-between--"] { align-content: space-between; }
+
+@each $breakpoint in $s-flex-layout-breakpoints-list{
+   @include mappy-bp($breakpoint){
+      [data-flex-layout*="content-start\@#{$breakpoint}--"]   { align-content: flex-start; }
+      [data-flex-layout*="content-center\@#{$breakpoint}--"]  { align-content: center; }
+      [data-flex-layout*="content-end\@#{$breakpoint}--"]     { align-content: flex-end; }
+      [data-flex-layout*="content-around\@#{$breakpoint}--"]  { align-content: space-around; }
+      [data-flex-layout*="content-between\@#{$breakpoint}--"] { align-content: space-between; }
+   }
+}
+
+
+
+
+/* Horizontal alignment
+========================================================================== */
+[data-flex-layout*="start--"] { justify-content: flex-start; }
+[data-flex-layout*="center--"] { justify-content: center; }
+[data-flex-layout*="end--"] { justify-content: flex-end; }
+[data-flex-layout*="around--"] { justify-content: space-around; }
+[data-flex-layout*="between--"] { justify-content: space-between; }
+
+@each $breakpoint in $s-flex-layout-breakpoints-list{
+   @include mappy-bp($breakpoint){
+      [data-flex-layout*="start\@#{$breakpoint}--"] { justify-content: flex-start; }
+      [data-flex-layout*="center\@#{$breakpoint}--"] { justify-content: center; }
+      [data-flex-layout*="end\@#{$breakpoint}--"] { justify-content: flex-end; }
+      [data-flex-layout*="around\@#{$breakpoint}--"] { justify-content: space-around; }
+      [data-flex-layout*="between\@#{$breakpoint}--"] { justify-content: space-between; }
+   }
+}
+
+
+
+/* Layout items
+========================================================================== */
+
+// ORDER
+[data-flex-layout__item*="first--"] { order: -1; }
+[data-flex-layout__item*="last--"] { order: 9999 }
+
+
+@each $breakpoint in $s-flex-layout-breakpoints-list{
+   @include mappy-bp($breakpoint){
+      [data-flex-layout__item*="first\@#{$breakpoint}--"] { order: -1; }
+      [data-flex-layout__item*="last\@#{$breakpoint}--"] { order: 9999 }
+   }
+}
+
+// Self vertical-alignement
+[data-flex-layout__item*="top--"] { align-items: flex-start; }
+[data-flex-layout__item*="middle--"] { align-items: center; }
+[data-flex-layout__item*="bottom--"] { align-items: flex-end; }
+[data-flex-layout__item*="baseline--"] { align-items: baseline; }
+
+@each $breakpoint in $s-flex-layout-breakpoints-list{
+   @include mappy-bp($breakpoint){
+      [data-flex-layout__item*="top\@#{$breakpoint}--"] { align-items: flex-start; }
+      [data-flex-layout__item*="middle\@#{$breakpoint}--"] { align-items: center; }
+      [data-flex-layout__item*="bottom\@#{$breakpoint}--"] { align-items: flex-end; }
+      [data-flex-layout__item*="baseline\@#{$breakpoint}--"] { align-items: baseline; }
+   }
+}
+
+
+
+/* Scope modifiers
+   Deprecate it...
+========================================================================== */
+[data-flex-layout]{
+   > * {
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      // expand auto sizing for elements without sizing class
+      &:not([class*="u-size-"]){
+         flex: 1 1 0px;
+      }
+   }
+}
+
+
+
+// Make eaqual height items
+[data-flex-layout*="match-height--"]{
+   align-items: inherit; //reset component current alignment
+
+   > * {
+      display: flex;
+      flex-direction: column;
+   }
+}
+

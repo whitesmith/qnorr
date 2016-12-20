@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{#if pageTitle}}{{pageTitle}}{{else}}{{meta.base.title}}{{/if}}</title>
+<!--favicons-->
+{{> _crossplatform_favicons}}
+
+<!--SEO DEFAULTS-->
+<meta name="application-name" content="{{meta.base.name}}"/>
+<meta name="author" content="{{meta.base.author}}"/>
+<meta name="keywords" content="{{meta.base.keywords}}"/>
+<meta name="description" content="{{meta.base.description}}"/>
+<meta name="robots" content="INDEX, FOLLOW">
+
+<!--dynamic meta tags about the post for sharing -->
+{{> _sharing_meta_tags }}
+
+<!--stylesheets-->
+<!-- <link rel="preload" href="./stylesheets/app.css" as="style" onload="this.rel='stylesheet'"> -->
+<link rel="stylesheet" href="./stylesheets/app.css">
+
+<script>document.getElementsByTagName('html')[0].classList.remove('no-js');</script>

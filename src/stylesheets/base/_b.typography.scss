@@ -1,0 +1,41 @@
+/*
+    BASE.FONTS
+    ----
+
+* ==================================================== */
+
+/* Use mixin to include desired font, one mixin per weight/style pair */
+//@include font-face($font-family: 'FontNAME', $file-path: 'fontPath', $font-weight: '500', $font-style: 'normal', $RoR: false);
+
+@include font-face(
+	$font-family: 'Poppins',
+	$file-path: '../assets/fonts/Poppins/600/poppins-semibold-webfont',
+	$font-weight: '600', $font-style: 'normal',
+	$RoR: false,
+	$legacy: false );
+
+@include font-face(
+	$font-family: 'Poppins',
+	$file-path: '../assets/fonts/Poppins/700/poppins-bold-webfont',
+	$font-weight: '700',
+	$font-style: 'normal',
+	$RoR: false,
+	$legacy: false);
+
+
+body{
+	font: normal 1rem/1.5 "Helvetica Neue", Helvetica, sans-serif;
+	letter-spacing: -0.01px;
+	color: getAppColor('grayscale', 'base');
+	 -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-weight: normal;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica Neue, Helvetica, -apple-system, Roboto, sans-serif;
+}
+
+

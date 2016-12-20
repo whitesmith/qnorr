@@ -1,0 +1,11 @@
+.o-section{
+   padding:{
+      top: $g-baseline;
+      bottom: $g-baseline;
+   }
+
+   @include mappy-bp(sm){
+      top: $g-baseline * 2;
+      bottom: $g-baseline * 2;
+   }
+}

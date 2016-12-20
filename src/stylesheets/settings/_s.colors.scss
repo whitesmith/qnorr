@@ -1,0 +1,50 @@
+/*
+    SETTINGS.COLORS
+    ----
+
+    App wide colors united on sexy sass map
+    Use getAppColor() function to extract color and
+    tints and shades
+
+    Notes: you can put single variables here if
+    doesn't fit the getAppColor() pattern
+* ==================================================== */
+
+
+$g-colors-maps: (
+   brand: (
+      lighter: mix(#6B3384, white, 80%),
+      light: mix(#6B3384, white, 90%),
+      base: #6B3384,
+      dark: mix(#6B3384, black, 90%),
+      darker: mix(#6B3384, black, 80%),
+   ),
+   primary:(
+      light: mix(#50B4F3, white, 80%),
+	   base: #50B4F3,
+      dark: #4A90E2,
+      darker: #3072E0
+   ),
+   grayscale:(
+      heaven: #fafafa,
+      lightsmoke: #F1F1F1,
+      smoke: #EBEBEB,
+      darksmoke: #e1e1e1,
+      lightest: #999999,
+      lighter: #555555,
+      light: #333333,
+      base: #161616
+   ),
+   danger: #EC465B,
+   success: #00C766,
+   info: #6A9EBE,
+   warning: #F9A01B,
+   white: #fff
+);
+
+
+$social-media-colors-map: (
+    facebook: #365899,
+    github: #333,
+    twitter: #00aced,
+);

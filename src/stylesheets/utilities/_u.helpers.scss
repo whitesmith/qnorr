@@ -1,0 +1,27 @@
+/*
+    UTILITIES.HELPERS
+    ----
+
+==================================================== */
+
+/* FLOAT CLEARANCE*/
+.u-cf {
+	@include clearfix();
+}
+
+
+/*
+	SCREEN READERS ONLY
+
+	visually hide text but kepp it accessible to screen readers
+*/
+.u-sr-only {
+	@include hidden-visually();
+}
+
+
+
+
+
+
+.u-no-m-b{ margin-bottom: 0px !important;}

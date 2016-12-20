@@ -1,0 +1,49 @@
+/*
+    OBJECTS.FILE
+    ----
+
+
+    stacked object layout
+
+    common uses: icon + text feature
+
+    <div class="o-block">
+	    <img src="/path/to/image.png" alt="" class="o-block__img" />
+	    <div class="o-block__body">
+	        <p>Text-like content goes here.</p>
+	    </div>
+	</div>
+==================================================== */
+
+
+.o-block,
+.o-block__img,
+.o-block__body {
+	display: block;
+}
+
+
+.o-block{
+
+	&--center{
+		text-align: center;
+	}
+}
+
+
+	.o-block__img {
+		margin-bottom: $g-baseline / 2;
+
+		.o-block--center & {
+			max-width: 100%;
+			margin: {
+            left: auto;
+            right: auto;
+         };
+		}
+	}
+
+	.o-block__body{
+		margin-bottom: $g-baseline;
+	}
+

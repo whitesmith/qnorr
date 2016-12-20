@@ -1,0 +1,22 @@
+{
+	"base": {
+		"app_name": "Whitesmith",
+		"title": "Whitesmith",
+		"keywords": "",
+		"author": "Whitesmith",
+		"description": "."
+	},
+	"og": {
+		"title": "Whitesmith",
+		"site_name": "Whitesmith",
+		"descriptions": "",
+		"image": "https://whitesmith.github.io/pds/assets/images/logo.png",
+		"url": "https://whitesmith.co"
+	},
+	"social": {
+		"twitter_card": "absolute_path_to_image",
+		"twitter_image_alt": "",
+		"fb_app_id": "@whitesmithco",
+		"fb_twitter_site": "@whitesmithco"
+	}
+}

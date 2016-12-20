@@ -1,0 +1,94 @@
+/*
+    COMPONENTS.BUTTON
+    ----
+
+==================================================== */
+
+/* Buttons config */
+$button-base-size: 44px;
+$button-base-radius: 44px;
+
+
+/*
+    BUTTON.BASE
+*/
+
+@mixin buttonBase{
+    @include resetAppearance(); //reset default browser btn appearance
+
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+    text-align: center;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s, border 0.15s;
+    will-change: background, color, border;
+}
+
+@mixin buttonSkeleton{
+    padding: 0 1.5rem;
+    font-weight: 600;
+    height: $button-base-size;
+    line-height: $button-base-radius;
+    @include font-size(12px, $button-base-radius);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: $g-primary-font-family;
+    border-radius: $button-base-radius;
+}
+
+.c-button{
+    @include buttonBase;
+    @include buttonSkeleton;
+}
+
+    .c-button__icon,
+    .c-button__text{
+        vertical-align: middle;
+    }
+
+    .c-button__text:first-child{
+        margin-right: 0.5rem;
+    }
+
+    .c-button__text:last-child{
+        margin-left: 0.5rem;
+    }
+
+    .c-button__icon{
+        margin-top: -1px;
+        // transition: fill 0.15s, color 0.15s;
+    }
+
+
+.c-button--responsive\@sm{
+    height: 36px;
+    @include font-size(12px, 36px);
+
+    //weird bug wweeeird
+    @include mappy-bp(767px){
+        height: 44px;
+        @include font-size(12px, 44px);
+        padding: 0 2rem;
+        min-width: 180px;
+    }
+}
+
+
+.c-button--cta{
+    min-width: 180px;
+    max-width: 100%;
+}
+.c-button--primary{
+    background: black;
+    color: getAppColor(grayscale, 'lightsmoke');
+    transition: all 0.15s;
+
+    &:hover{
+        color: getAppColor(grayscale, 'lightsmoke');
+        box-shadow: 0px 8px 24px rgba(0,0,0,0.24);
+    }
+}
+
+

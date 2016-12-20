@@ -1,0 +1,252 @@
+/*
+    TOOLS.MIXINS
+    ----
+
+    Global, app-wide helper mixins
+
+    types, check near the name.
+    [1] direct mixin, @include mixinName(); prints code takes no arguments
+    [2] @content mixin, @include mixinNametype property(ies): value(s)}
+    [3] argument mixin, @include mixinName(requiredArguments);
+
+* ==================================================== */
+
+/*
+    REM font-sizing, converts pixels to rems
+    Base on aleut.css
+    https://github.com/aleutcss/tools.mixins/blob/master/_tools.mixins.scss
+*/
+@mixin font-size($mixin-font-size, $mixin-line-height: auto, $legacyBrowsers: false) {
+    @if $legacyBrowsers == true {
+        font-size: $mixin-font-size;
+    }
+    font-size: ($mixin-font-size / $g-base-font-size) * 1rem;
+
+    @if $mixin-line-height == auto {
+        line-height: ceil($mixin-font-size / $g-base-font-line-height) * ($g-base-font-line-height / $mixin-font-size);
+    }
+
+    @else {
+
+        @if (type-of($mixin-line-height) == number or $mixin-line-height == inherit or $mixin-line-height == normal) {
+            line-height: $mixin-line-height;
+        }
+
+        @elseif ($mixin-line-height != none and $mixin-line-height != false) {
+            @warn "D’oh! ‘#{$mixin-line-height}’ is not a valid value for `line-height`."
+        }
+
+    }
+
+}
+
+
+/*
+    Mixin for quicker typesetting
+
+    depends on @font-size mixin to convert
+    values to REM
+*/
+
+@mixin typeScale($scale: 4){
+    $font-size: nth(map-get($g-typescale, $scale), 1);
+    $leading: nth(map-get($g-typescale, $scale), 2);
+
+    @include font-size($font-size, $leading);
+}
+
+
+
+
+/*
+    FONT-FACE
+
+    Base on Steve Hickey..
+    http://codepen.io/javasteve99/pen/hDxpn
+
+    .. but on steroids
+    You can cover all modern browsers, plus IE>9
+    with only woff formats.
+*/
+@mixin font-face($font-family, $file-path, $font-weight, $font-style, $RoR: false, $legacy: false){
+
+    @if $legacy == true {
+        @font-face {
+            font-family: $font-family;
+            @if $RoR == true {
+                src: font-url('#{$file-path}.eot');
+                src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+                     font-url('#{$file-path}.woff') format('woff'),
+                     font-url('#{$file-path}.ttf') format('truetype'),
+                     font-url('#{$file-path}.svg#{$font-family}') format('svg');
+            } @else {
+                src: url('#{$file-path}.eot');
+                src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+                     url('#{$file-path}.woff') format('woff'),
+                     url('#{$file-path}.ttf') format('truetype'),
+                     url('#{$file-path}.svg#{$font-family}') format('svg');
+            }
+
+            font-weight: unquote($font-weight);
+            font-style:  unquote($font-style);
+        }
+
+        // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            @font-face {
+                font-family: $font-family;
+                 @if $RoR == true {
+                    src: font-url('#{$file-path}.svg##{$font-family}') format('svg');
+                } @else {
+                    src: url('#{$file-path}.svg##{$font-family}') format('svg');
+                }
+
+                font-weight: unquote($font-weight);
+                font-style:  unquote($font-style);
+            }
+        }
+    }
+    @else {
+        @font-face {
+            font-family: $font-family;
+            @if $RoR == true {
+                src: font-url('#{$file-path}.woff') format('woff'),
+                     font-url('#{$file-path}.woff2') format('woff2');
+            } @else {
+                src: url('#{$file-path}.woff') format('woff'),
+                     url('#{$file-path}.woff2') format('woff2');
+            }
+            font-weight: unquote($font-weight);
+            font-style:  unquote($font-style);
+        }
+    }
+}
+
+
+
+
+/*
+    RESET APPEARANCE [1]
+    ----
+
+    reset browser defaults on interactive elements
+    links, buttons, inputs
+*/
+@mixin resetAppearance() {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    //user-select: none;
+    border-radius: 0;
+}
+
+
+
+
+
+/*
+    INPUT PLACEHOLDER MIXIN [2]
+    ----
+
+    styles for inputs placeholders, cross-browser way
+*/
+@mixin inputPlaceholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        @content;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+
+
+/*
+    Hidden visually
+    ----
+
+    Mixin to quickly apply accessible hiding to elements.
+    https://github.com/inuitcss/inuitcss/
+*/
+@mixin hidden-visually() {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+}
+
+
+/*
+    bg-cover
+    ----
+
+   Because I find myself repeating this
+   3 lines too often
+*/
+@mixin bg-cover($postion: center center){
+    background-size: cover;
+    background-position: $postion;
+    background-repeat: no-repeat;
+}
+
+
+
+/*
+    Fontawesome
+    ----
+
+    for inline css icons through unicode
+*/
+
+@mixin FontAwesome(){
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+
+/*
+    Clearfix
+    ----
+
+    clear all floats
+    http://cssmojo.com/the-very-latest-clearfix-reloaded/
+*/
+@mixin clearfix(){
+    &:after {
+        content:" ";
+        display:block;
+        clear:both;
+    }
+}
+
+@mixin pseudoElExpander(){
+    content: " ";
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}

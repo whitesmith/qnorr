@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+   {{> _head}}
+</head>
+<body data-context="{{page}}">
+   <div class="o-skeleton" id="app">
+      <!--o-sekeleton__head -->
+      {{> _header }}
+      <main class="o-skeleton__body" role="main">
+         {{> body}}
+      </main>
+      <!--o-skeleton__feet-->
+      {{> _footer }}
+   </div>
+
+   <!--scripts-->
+   <script src="./scripts/app.js"></script>
+   {{> _google_analytics}}
+</body>
+</html>
+
+

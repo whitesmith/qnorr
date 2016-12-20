@@ -1,0 +1,44 @@
+/*
+    OBJECTS.CONTAINER
+    ----
+
+
+    Wrapping content, to a limited size or now
+==================================================== */
+
+$container-sizes:(
+	xxs: 480px,
+	xs: 600px,
+	sm: 720px,
+	sml: 800px,
+	md: 880px,
+	mdl: 960px,
+	lg: 1080px,
+	xl: 1280px,
+	xxl: 1440px
+);
+
+
+.o-container{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	padding: {
+		left: $g-baseline / 2;
+		right: $g-baseline / 2;
+	}
+
+	@each $breakpoint, $size in $container-sizes{
+		@include mappy-bp($breakpoint){
+			max-width: $size;
+		}
+	}
+
+
+	&--flush{
+		padding: {
+			left: 0;
+			right: 0;
+		}
+	}
+}

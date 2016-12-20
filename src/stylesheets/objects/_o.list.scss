@@ -1,0 +1,38 @@
+/*
+    OBJECTS.LIST
+    ----
+
+	Order and unordered list of items
+* ==================================================== */
+
+
+.o-list{
+	margin: 0; //reset default margins;
+	margin-bottom: $g-baseline;
+}
+
+	.o-list__item{
+		&:not(:last-child){
+			margin-bottom: $g-baseline / 2;
+		}
+	}
+
+.o-list--unstyled {
+   list-style: none;
+}
+
+.o-list--horizontal{
+	list-style: none;
+	padding-left: 0;
+
+	> .o-list__item{
+		display: inline-block;
+		vertical-align: middle;
+
+		&:not(:last-child){
+			margin-right: $g-baseline / 2;
+		}
+	}
+}
+
+
