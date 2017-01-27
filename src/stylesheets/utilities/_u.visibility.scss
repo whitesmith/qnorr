@@ -1,0 +1,10 @@
+$u-text-alignment-breakpoints-list: $grid-breakpoints !default;
+
+.u-hidden { display: none; }
+
+
+@each $breakpoint in $u-text-alignment-breakpoints-list {
+   @include mappy-bp($breakpoint){
+      .u-hidden-\@#{$breakpoint} { display: none; }
+   }
+}

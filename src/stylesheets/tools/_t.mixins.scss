@@ -40,6 +40,10 @@
 
 }
 
+@mixin px2rem($property: "font-size", $pixels: $g-base-font-size){
+   #{$property}: (strip-unit($pixels) / strip-unit($g-base-font-size) ) * 1rem;
+};
+
 
 /*
     Mixin for quicker typesetting
