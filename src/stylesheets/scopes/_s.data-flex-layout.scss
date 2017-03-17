@@ -1,5 +1,5 @@
 /*
-   SOCPES.RATIO
+   Flout.
    ----
 
    [HIGHLY EXPERIEMENTAL]
@@ -111,55 +111,56 @@ $s-flex-layout-breakpoints-list: $grid-breakpoints !default;
 ========================================================================== */
 
 // ORDER
-[data-flout__el*="first--"] { order: -1; }
-[data-flout__el*="last--"] { order: 9999 }
+[data-flitem*="first--"] { order: -1; }
+[data-flitem*="last--"] { order: 9999 }
 
 
 @each $breakpoint in $s-flex-layout-breakpoints-list{
    @include mappy-bp($breakpoint){
-      [data-flout__el*="first\@#{$breakpoint}--"] { order: -1; }
-      [data-flout__el*="last\@#{$breakpoint}--"] { order: 9999 }
+      [data-flitem*="first\@#{$breakpoint}--"] { order: -1; }
+      [data-flitem*="last\@#{$breakpoint}--"] { order: 9999 }
    }
 }
 
 // Self vertical-alignement
-[data-flout__el*="top--"] { align-self: flex-start; }
-[data-flout__el*="middle--"] { align-self: center; }
-[data-flout__el*="bottom--"] { align-self: flex-end; }
-[data-flout__el*="baseline--"] { align-self: baseline; }
+[data-flitem*="top--"] { align-self: flex-start; }
+[data-flitem*="middle--"] { align-self: center; }
+[data-flitem*="bottom--"] { align-self: flex-end; }
+[data-flitem*="baseline--"] { align-self: baseline; }
 
 @each $breakpoint in $s-flex-layout-breakpoints-list{
    @include mappy-bp($breakpoint){
-      [data-flout__el*="top\@#{$breakpoint}--"] { align-self: flex-start; }
-      [data-flout__el*="middle\@#{$breakpoint}--"] { align-self: center; }
-      [data-flout__el*="bottom\@#{$breakpoint}--"] { align-self: flex-end; }
-      [data-flout__el*="baseline\@#{$breakpoint}--"] { align-self: baseline; }
+      [data-flitem*="top\@#{$breakpoint}--"] { align-self: flex-start; }
+      [data-flitem*="middle\@#{$breakpoint}--"] { align-self: center; }
+      [data-flitem*="bottom\@#{$breakpoint}--"] { align-self: flex-end; }
+      [data-flitem*="baseline\@#{$breakpoint}--"] { align-self: baseline; }
    }
 }
 
 // Self relative alginment
-[data-flout__el*="shy-left--"]  { margin-left: auto; }
-[data-flout__el*="shy-right--"] { margin-right: auto; }
+[data-flitem*="shy-left--"]  { margin-left: auto; }
+[data-flitem*="shy-right--"] { margin-right: auto; }
 
 
 @each $breakpoint in $s-flex-layout-breakpoints-list{
    @include mappy-bp($breakpoint){
-      [data-flout__el*="shy-left\@#{$breakpoint}--"]  { margin-left: auto; }
-      [data-flout__el*="shy-right\@#{$breakpoint}--"] { margin-right: auto; }
+      [data-flitem*="shy-left\@#{$breakpoint}--"]  { margin-left: auto; }
+      [data-flitem*="shy-right\@#{$breakpoint}--"] { margin-right: auto; }
    }
 }
 
 
 // GROW & SHRINK
-[data-flout__el*="grow--"]  { flex-grow: 1}
-[data-flout__el*="shrink--"] { flex-shrink: 1; }
-[data-flout__el*="expand--"]  { flex: 1 0 0px; }
+[data-flitem*="grow--"]  { flex-grow: 1}
+[data-flitem*="shrink--"] { flex-shrink: 1; }
+[data-flitem*="expand--"]  { flex: 1 0 0px; }
+[data-flitem*="expand-auto-"]  { flex: 1 0 auto; }
 
 
 @each $breakpoint in $s-flex-layout-breakpoints-list{
    @include mappy-bp($breakpoint){
-      [data-flout__el*="grow\@#{$breakpoint}--"]  {  flex-grow: 1; }
-      [data-flout__el*="shrink\@#{$breakpoint}--"] { flex-shrink: 1; }
+      [data-flitem*="grow\@#{$breakpoint}--"]  {  flex-grow: 1; }
+      [data-flitem*="shrink\@#{$breakpoint}--"] { flex-shrink: 1; }
    }
 }
 
