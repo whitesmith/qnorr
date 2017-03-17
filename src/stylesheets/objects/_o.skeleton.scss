@@ -31,8 +31,7 @@
    	flex: none;
    }
 
-   .o-skeleton__body,
-   .o-skeleton__main{
+   .o-skeleton__body{
       position: relative;
    	flex: 1 0 auto;
    	width: 100%;
@@ -45,7 +44,7 @@
 
 /* [1] */
 .o-skeleton--scrollable{
-   .o-skeleton__body, .o-skeleton__main {
+   .o-skeleton__body{
       overflow: auto;
       -webkit-overflow-scrolling: touch;
    }
