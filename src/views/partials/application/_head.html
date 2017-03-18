@@ -2,19 +2,35 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{#if pageTitle}}{{pageTitle}}{{else}}{{meta.base.title}}{{/if}}</title>
-<!--favicons-->
-{{> _crossplatform_favicons}}
+{{#each meta.pages}}
+   {{#ifpage this.slug}}
+      <!--title-->
+      <title>{{#if this.title}}{{this.title}}{{else}}{{../meta.defaults.title}}{{/if}}</title>
+      <!--SEO MANDATORIES-->
+      <meta name="keywords" content="{{#if this.keywords}}{{this.keywords}}{{else}}{{../meta.defaults.keywords}}{{/if}}"/>
+      <meta name="description" content="{{#if this.description}}{{this.description}}{{else}}{{../meta.defaults.description}}{{/if}}"/>
+      <meta name="author" content="{{../meta.defaults.author}}"/>
+      <meta name="application-name" content="{{../meta.defaults.app_name}}"/>
+      <meta name="robots" content="INDEX, FOLLOW">
 
-<!--SEO DEFAULTS-->
-<meta name="application-name" content="{{meta.base.name}}"/>
-<meta name="author" content="{{meta.base.author}}"/>
-<meta name="keywords" content="{{meta.base.keywords}}"/>
-<meta name="description" content="{{meta.base.description}}"/>
-<meta name="robots" content="INDEX, FOLLOW">
+      <!--  Essential OG Tags -->
+      <meta property="og:title" content="{{#if this.og_title}}{{this.og_title}}{{else}}{{this.title}}{{/if}}">
+      <meta property="og:description" content="{{#if this.og_description}}{{this.og_description}}{{else}}{{this.description}}{{/if}}">
+      <meta property="og:image" content="{{#if this.og_image}}{{this.og_image}}{{else}}{{../meta.defaults.logo}}{{/if}}">
+      <meta property="og:url" content="{{../meta.defaults.domain}}{{this.slug}}">
 
-<!--dynamic meta tags about the post for sharing -->
-{{> _sharing_meta_tags }}
+      <!--  Non-Essential, But Recommended -->
+      <meta name="og:site_name" content="{{../meta.og.site_name}}">
+      <meta name="twitter:image:alt" content="{{../meta.social.twitter_image_alt}}">
+      <meta name="twitter:card" content="{{../meta.social.twitter_card}}">
+
+      <!--  Non-Essential, But Required for Analytics -->
+      <meta property="fb:app_id" content="{{../meta.social.fb_app_id}}" />
+      <meta name="twitter:site" content="{{../meta.social_twitter_site}}">
+
+   {{/ifpage}}
+{{/each}}
+
 
 <!--stylesheets-->
 <!-- <link rel="preload" href="./stylesheets/app.css" as="style" onload="this.rel='stylesheet'"> -->
