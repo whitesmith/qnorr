@@ -29,24 +29,24 @@
   },
   "homepage": "https://whitesmith.github.io/pds",
   "devDependencies": {
-    "babel-preset-es2015": "^6.16.0",
-    "babel-register": "^6.16.3",
-    "browser-sync": "^2.17.0",
-    "critical": "^0.8.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "critical": "^0.8.4",
     "del": "^2.2.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
-    "gulp-cached": "^1.1.0",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-concat": "^2.6.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-clean-css": "^2.4.0",
+    "gulp-concat": "^2.6.1",
     "gulp-eslint": "^3.0.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^3.0.3",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
     "gulp-include": "^2.3.1",
-    "gulp-load-plugins": "^1.3.0",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-newer": "^1.3.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
@@ -54,22 +54,19 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-size": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
+    "gulp-sourcemaps": "^1.11.1",
+    "gulp-uglify": "^2.1.1",
+    "gulp-util": "^3.0.8",
     "mappy-breakpoints": "^0.2.3",
     "panini": "^1.3.0",
     "psi": "^2.0.4",
-    "sw-precache": "^4.1.0",
-    "wowjs": "^1.1.3"
+    "sw-precache": "^4.3.0"
   },
   "eslintConfig": {
     "extends": ""
   },
   "dependencies": {
-    "aos": "^2.1.1",
-    "jquery": "^3.1.1",
     "normalize.css": "^5.0.0",
-    "swiper": "^3.4.0"
+    "swiper": "^3.4.2"
   }
 }
