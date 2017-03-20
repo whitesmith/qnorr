@@ -151,9 +151,9 @@ export function scripts() {
     .pipe($.cached('scripts'))
     .pipe($.babel({presets: ['es2015']}))
     .pipe($.include({
+    	extensions: "js",
       includePaths: [
         __dirname + "/node_modules",
-        __dirname + "/bower_components",
         __dirname + "/src/scripts"
       ]
     }))
