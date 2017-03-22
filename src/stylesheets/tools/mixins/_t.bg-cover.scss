@@ -1,0 +1,12 @@
+/*
+    bg-cover
+    ----
+
+   Because I find myself repeating this
+   3 lines too often
+*/
+@mixin bg-cover($postion: center center){
+    background-size: cover;
+    background-position: $postion;
+    background-repeat: no-repeat;
+}

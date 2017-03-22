@@ -1,0 +1,13 @@
+/*
+    Mixin for quicker typesetting
+
+    depends on @font-size mixin to convert
+    values to REM
+*/
+
+@mixin typeScale($scale: 4){
+    $font-size: nth(map-get($g-typescale, $scale), 1);
+    $leading: nth(map-get($g-typescale, $scale), 2);
+
+    @include font-size($font-size, $leading);
+}

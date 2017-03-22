@@ -1,0 +1,25 @@
+/*
+    TOOLS.MIXINS
+    ----
+
+    Global, app-wide helper mixins
+
+    types, check near the name.
+    [1] direct mixin, @include mixinName(); prints code takes no arguments
+    [2] @content mixin, @include mixinNametype property(ies): value(s)}
+    [3] argument mixin, @include mixinName(requiredArguments);
+
+* ==================================================== */
+
+@import "mixins/t.font-size";
+@import "mixins/t.px2rem";
+@import "mixins/t.type-scale";
+@import "mixins/t.font-face";
+@import "mixins/t.reset-appearance";
+@import "mixins/t.input-placeholder";
+@import "mixins/t.hidden-visually";
+@import "mixins/t.bg-cover";
+@import "mixins/t.clearfix";
+@import "mixins/t.font-awesome";
+@import "mixins/t.expand-pseudo";
+
