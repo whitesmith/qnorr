@@ -183,7 +183,7 @@ export function views() {
       layouts: paths.views.src + 'layouts/',
       partials: paths.views.src + 'partials/**/',
       helpers: paths.views.src + 'helpers/',
-      data: paths.views.src + 'data/'
+      data: [paths.appRoot.src, paths.views.src + 'data/']
     }))
     .on('error', handleError('views'))
     .pipe(
