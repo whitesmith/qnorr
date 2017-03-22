@@ -7,14 +7,12 @@
 	 \/  \/|_| |_|_|\__\___||___/_| |_| |_|_|\__|_| |_|
 
 
-	Do not place code here, this is a manifesto just require the modules
-	Only modules inside src/scripts folder and node_modules are included.
-	Need a different path?
-	add it to the gulp task "scripts"
+	Do not place code here, this is a manifesto just import the ES6 modules needed
+	Modules inside src/scripts folder and node_modules can be included.
 
-	Examples (remove the "*"):
-	//*=require vendor/loadSVGSprite.js
-	//*=require vendor/*.js
+	Examples:
+	import "./vendor/loadSVGSprite.js";
+	import * as module from "module";
 */
 
-//=require helpers/helloWorld.js
+import "./helpers/helloWorld.js";
