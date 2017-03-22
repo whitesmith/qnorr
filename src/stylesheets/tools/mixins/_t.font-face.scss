@@ -1,0 +1,63 @@
+/*
+    FONT-FACE
+
+    Base on Steve Hickey..
+    http://codepen.io/javasteve99/pen/hDxpn
+
+    .. but on steroids
+    You can cover all modern browsers, plus IE>9
+    with only woff formats.
+*/
+@mixin font-face($font-family, $file-path, $font-weight, $font-style, $RoR: false, $legacy: false){
+
+    @if $legacy == true {
+        @font-face {
+            font-family: $font-family;
+            @if $RoR == true {
+                src: font-url('#{$file-path}.eot');
+                src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+                     font-url('#{$file-path}.woff') format('woff'),
+                     font-url('#{$file-path}.ttf') format('truetype'),
+                     font-url('#{$file-path}.svg#{$font-family}') format('svg');
+            } @else {
+                src: url('#{$file-path}.eot');
+                src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+                     url('#{$file-path}.woff') format('woff'),
+                     url('#{$file-path}.ttf') format('truetype'),
+                     url('#{$file-path}.svg#{$font-family}') format('svg');
+            }
+
+            font-weight: unquote($font-weight);
+            font-style:  unquote($font-style);
+        }
+
+        // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            @font-face {
+                font-family: $font-family;
+                 @if $RoR == true {
+                    src: font-url('#{$file-path}.svg##{$font-family}') format('svg');
+                } @else {
+                    src: url('#{$file-path}.svg##{$font-family}') format('svg');
+                }
+
+                font-weight: unquote($font-weight);
+                font-style:  unquote($font-style);
+            }
+        }
+    }
+    @else {
+        @font-face {
+            font-family: $font-family;
+            @if $RoR == true {
+                src: font-url('#{$file-path}.woff') format('woff'),
+                     font-url('#{$file-path}.woff2') format('woff2');
+            } @else {
+                src: url('#{$file-path}.woff') format('woff'),
+                     url('#{$file-path}.woff2') format('woff2');
+            }
+            font-weight: unquote($font-weight);
+            font-style:  unquote($font-style);
+        }
+    }
+}

@@ -1,0 +1,16 @@
+/*
+    getTransition()
+    ----
+
+   just to avoid verbosity of map-get($transition-map-name);
+
+*/
+
+@function getTransition($transition: 'smooth') {
+    @if map-has-key($g-transitions-map, $transition) {
+        @return map-get($g-transitions-map, $transition);
+    }
+    //else
+    @error "`#{$transition}` is not in #{$map}. Check settings folder, maybe you mispelled a key";
+    @return false;
+ }

@@ -1,0 +1,19 @@
+/*
+    RESET APPEARANCE [1]
+    ----
+
+    reset browser defaults on interactive elements
+    links, buttons, inputs
+*/
+@mixin resetAppearance() {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    //user-select: none;
+    border-radius: 0;
+}
+

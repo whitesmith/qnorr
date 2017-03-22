@@ -1,0 +1,13 @@
+/*
+	A pseudo element that takes all the sapce of its parent
+*/
+
+@mixin expandPseudo(){
+    content: " ";
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
