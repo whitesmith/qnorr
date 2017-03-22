@@ -183,7 +183,7 @@ export function views() {
       layouts: paths.views.src + 'layouts/',
       partials: paths.views.src + 'partials/**/',
       helpers: paths.views.src + 'helpers/',
-      data: paths.views.src + 'data/'
+      data: [paths.appRoot.src, paths.views.src + 'data/']
     }))
     .on('error', handleError('views'))
     .pipe(
@@ -232,6 +232,9 @@ export function browserSyncServer(done){
   var config = {
       server: {
         baseDir: paths.appRoot.dest,
+        serveStaticOptions: {
+          extensions: ['html']
+        }
       }
   }
   //run TUNNEL=true gulp to start public tunnel url to share.
