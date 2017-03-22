@@ -232,6 +232,9 @@ export function browserSyncServer(done){
   var config = {
       server: {
         baseDir: paths.appRoot.dest,
+        serveStaticOptions: {
+          extensions: ['html']
+        }
       }
   }
   //run TUNNEL=true gulp to start public tunnel url to share.
