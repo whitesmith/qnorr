@@ -6,6 +6,11 @@ import BrowserSync from 'browser-sync';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
 import critical from 'critical';
+import rollup from 'rollup-stream';
+import nodeResolve from 'rollup-plugin-node-resolve';
+import sourcemaps from 'gulp-sourcemaps';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 
 const criticalStream =  critical.stream;
 const browserSync = BrowserSync.create();
@@ -146,27 +151,31 @@ export function styles() {
 }
 
 export function scripts() {
-  return gulp.src(paths.scripts.manifesto, { sourcemaps: true })
-    .pipe($.plumber())
-    .pipe($.cached('scripts'))
-    .pipe($.babel({presets: ['es2015']}))
-    .pipe($.include({
-    	extensions: "js",
-      includePaths: [
-        __dirname + "/node_modules",
-        __dirname + "/src/scripts"
-      ]
-    }))
-    .on('error', handleError('scripts'))
-    .pipe($.if(productionEnv, $.uglify()))
-    .on('error', handleError('scripts-uglify'))
-    .pipe($.remember('scripts'))
-    .pipe($.concat('app.js'))
-    .pipe($.if(productionEnv,
-      $.size({
-        title: $.util.colors.bgRed('[SIZE] Scripts: ')
+  return rollup({
+    entry: paths.scripts.manifesto,
+    sourceMap: true,
+    plugins: [
+      $.babel({
+        exclude: 'node_modules/**',
+        babelrc: false,
+        presets: ['es2015-rollup']
+      }),
+      nodeResolve({ jsnext: true, main: true })
+    ]
+  })
+  .on('error', handleError('rollup'))
+  .pipe(source(paths.scripts.manifesto))
+  .pipe(buffer())
+  .pipe(sourcemaps.init({loadMaps: true}))
+  .pipe($.if(productionEnv, $.uglify()))
+  .on('error', handleError('scripts-uglify'))
+  .pipe($.rename('app.js'))
+  .pipe(sourcemaps.write('.'))
+  .pipe($.if(productionEnv,
+    $.size({
+      title: $.util.colors.bgRed('[SIZE] Scripts: ')
     })))
-    .pipe(gulp.dest(paths.scripts.dest));
+  .pipe(gulp.dest(paths.scripts.dest));
 }
 
 
