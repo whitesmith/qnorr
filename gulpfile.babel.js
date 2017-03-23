@@ -163,6 +163,7 @@ export function scripts() {
       nodeResolve({ jsnext: true, main: true })
     ]
   })
+  .on('error', handleError('rollup'))
   .pipe(source(paths.scripts.manifesto))
   .pipe(buffer())
   .pipe(sourcemaps.init({loadMaps: true}))
