@@ -33,7 +33,7 @@ tasks.newProject = function(project_name) {
   }
 
   fs.mkdirSync(project_name);
-  shell.exec(["git clone", quickie_repo, "project_name"].join(" "));
+  shell.exec(["git clone", quickie_repo, project_name].join(" "));
   process.chdir(project_name);
   shell.exec("rm -rf .git && git init && git add . && git commit -am 'Quickie initial commit.'");
   shell.exec("npm install");
