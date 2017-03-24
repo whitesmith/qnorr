@@ -6,6 +6,9 @@
   "engines": {
     "node": ">=6.10.0"
   },
+  "bin": {
+    "quickie": "bin/quickie"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./node_modules/gulp/bin/gulp.js",
@@ -65,12 +68,13 @@
     "sw-precache": "^4.3.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-stream": "^1.19.0",
-    "sw-precache": "^4.3.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "exists-sync": "0.0.4",
     "normalize.css": "^5.0.0",
+    "shelljs": "^0.7.7",
     "swiper": "^3.4.2"
   }
 }
