@@ -14,11 +14,5 @@ if(!process.argv[2] || !(process.argv[2] in tasks)) {
   let task = tasks[process.argv[2]];
   let extra_args = process.argv.slice(3);
 
-  if(task.handler.length > extra_args.length) {
-    console.error("Insufficient arguments for specified command.");
-    console.error("Do quickie help to see command specification.");
-    exit(1);
-  } else {
-    task.handler.apply(this, extra_args.slice(0, task.handler.length))
-  }
+  task.handler(extra_args);
 }

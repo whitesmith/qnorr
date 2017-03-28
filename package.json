@@ -73,6 +73,8 @@
   },
   "dependencies": {
     "exists-sync": "0.0.4",
+    "fs-extra": "^2.1.2",
+    "minimist": "^1.2.0",
     "normalize.css": "^5.0.0",
     "require-all": "^2.2.0",
     "shelljs": "^0.7.7",
