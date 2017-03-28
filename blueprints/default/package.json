@@ -74,7 +74,6 @@
   "dependencies": {
     "exists-sync": "0.0.4",
     "normalize.css": "^5.0.0",
-    "require-all": "^2.2.0",
     "shelljs": "^0.7.7",
     "swiper": "^3.4.2"
   }

@@ -5,72 +5,20 @@
 process.title = 'quickie';
 
 const exit = require('exit');
-const task_list = {
-  "new": {
-    handler: "newProject",
-    args: ['project-name'],
-    usage: "quickie new <project-name>",
-    description: "Creates a new project using quickie in a new folder with the specified name."
-  },
-  "help": {
-    handler: "showHelp",
-    args: [],
-    usage: "quickie help",
-    description: "Shows this help message."
-  }
-};
+const tasks = require('require-all')(__dirname + '/../lib/tasks');
 
-let tasks = {};
-tasks.newProject = function(project_name) {
-  const fs = require('fs');
-  const existsSync = require('exists-sync');
-  const shell = require("shelljs");
-  const quickie_repo = "git@github.com:whitesmith/quickie.git";
-
-  if (existsSync(project_name)) {
-    console.error("Specified directory already exists :(.");
-    exit(1);
-  }
-
-  fs.mkdirSync(project_name);
-  shell.exec(["git clone", quickie_repo, project_name].join(" "));
-  process.chdir(project_name);
-  shell.exec("rm -rf ./cd bin");
-  shell.exec("rm -rf .git && git init && git add . && git commit -am 'Quickie initial commit.'");
-  shell.exec("npm install");
-
-  exit(0);
-}
-
-tasks.showHelp = function() {
-  console.log("QUICKIE: The best thing to happen since tantric sex.");
-  console.log("----------------------------------------------------");
-  for (let name in task_list) {
-    printTask(task_list[name]);
-    console.log();
-  }
-}
-
-function printTask(task) {
-  console.log(task.usage);
-  console.log("\t" + task.description);
-}
-
-if(!process.argv[2] || !(process.argv[2] in task_list)) {
+if(!process.argv[2] || !(process.argv[2] in tasks)) {
   console.error("Please specify a valid command. Use `quickie help` for a list of valid commands.");
   exit(1);
 } else {
-  let task = task_list[process.argv[2]];
+  let task = tasks[process.argv[2]];
   let extra_args = process.argv.slice(3);
 
-  if(task.args.length > extra_args.length) {
+  if(task.handler.length > extra_args.length) {
     console.error("Insufficient arguments for specified command.");
-    printTask(task);
+    console.error("Do quickie help to see command specification.");
     exit(1);
   } else {
-    let task_handler = tasks[task.handler];
-    task_handler.apply(this, extra_args.slice(0, task.args.length));
+    task.handler.apply(this, extra_args.slice(0, task.handler.length))
   }
-
-  exit(0);
 }
