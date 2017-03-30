@@ -13,10 +13,10 @@ npm install quickie
 ```
 
 ### Usage
-To get started with a new project, just run `quickie new <project-name>`. A new folder will be created under `project-name` with the default scaffolding and tools ([see below](#Features)) for Quickie, with git init-ed for you as well.
+To get started with a new project, just run `quickie new <project-name>`. A new folder will be created under `project-name` with the default scaffolding and tools ([see below](#features)) for Quickie, with git init-ed for you as well.
 
 ### Documentation
-More documentation regarding deployment/usage can be found in the [README.md](blueprints/deafault/files/README.md) of your newly created project folder.
+More documentation regarding deployment/usage can be found in the [README.md](blueprints/default/files/README.md) of your newly created project folder.
 
 In future quick overview guides will be created for some specific packages (Templating, CriticalCSS to name a few), in the meantime refer to packages own docs `/shrug`
 

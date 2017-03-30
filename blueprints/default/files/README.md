@@ -12,7 +12,6 @@ Your next static website, created using Quickie.
 1. Install dependencies `npm install`
 
 ### Usage
-1. Clone this repo into your desired project folder
 1. `npm start` or `npm run dev` or `gulp` to start development environment
 1. `npm run production` to start production environment
 1. `npm run build` to build a production environment folder
