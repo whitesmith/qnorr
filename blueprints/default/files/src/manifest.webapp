@@ -1,14 +1,14 @@
 {
   "version": "0.0.1",
-  "name": "quickie",
+  "name": "<%= project_name %>",
   "launch_path": "/index.html",
-  "description": "Sometimes quick, is better.",
+  "description": "",
   "icons": {
     "128": "assets/images/favicons/touch/icon-128x128.png"
   },
   "developer": {
-    "name": "Whitesmith",
-    "url": "https://whitesmith.co"
+    "name": "",
+    "url": ""
   },
   "installs_allowed_from": [
     "*"
@@ -18,8 +18,8 @@
   },
   "locales": {
     "en": {
-      "name": "quickie",
-      "description": "Sometimes quick, is better."
+      "name": "<%= project_name %>",
+      "description": ""
     }
   }
 }

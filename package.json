@@ -33,6 +33,7 @@
     "exit": "^0.1.2",
     "fs-extra": "^2.1.2",
     "minimist": "^1.2.0",
+    "replace": "^0.3.0",
     "require-all": "^2.2.0",
     "shelljs": "^0.7.7"
   }
