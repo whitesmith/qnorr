@@ -1,6 +1,6 @@
 {
   "name": "quickie",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Sometimes quick, is better.",
   "main": "bin/quickie.js",
   "engines": {
