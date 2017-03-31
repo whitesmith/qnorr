@@ -1,20 +1,20 @@
 {
-  "name": "quickie",
+  "name": "qnorr",
   "version": "0.1.0",
   "description": "Sometimes quick, is better.",
-  "main": "bin/quickie.js",
+  "main": "bin/qnorr",
   "engines": {
     "node": ">=6.10.0"
   },
   "bin": {
-    "quickie": "bin/quickie"
+    "qnorr": "bin/qnorr"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/whitesmith/quickie.git"
+    "url": "git+https://github.com/whitesmith/qnorr.git"
   },
   "keywords": [
     "sass",
@@ -24,9 +24,9 @@
   "author": "Whitesmith",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/whitesmith/quickie/issues"
+    "url": "https://github.com/whitesmith/qnorr/issues"
   },
-  "homepage": "https://whitesmith.github.io/quickie",
+  "homepage": "https://whitesmith.github.io/qnorr",
   "domain": "",
   "devDependencies": {},
   "dependencies": {

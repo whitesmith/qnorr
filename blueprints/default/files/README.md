@@ -1,5 +1,5 @@
 # <%= project_name %>
-Your next static website, created using Quickie.
+Your next static website, created using Qnorr.
 
 ### Requirements
 1. A computer.

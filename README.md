@@ -1,4 +1,4 @@
-# Quickie
+# Qnorr
 It will be a fully modular webstarter kit, for creating & deploying static website/webapps.  
 Right now is just a non-modular starter kit, but we'll get there.
 
@@ -9,11 +9,11 @@ Right now is just a non-modular starter kit, but we'll get there.
 
 ### Installation
 ```
-npm install quickie
+npm install qnorr
 ```
 
 ### Usage
-To get started with a new project, just run `quickie new <project-name>`. A new folder will be created under `project-name` with the default scaffolding and tools ([see below](#features)) for Quickie, with git init-ed for you as well.
+To get started with a new project, just run `qnorr new <project-name>`. A new folder will be created under `project-name` with the default scaffolding and tools ([see below](#features)) for Qnorr, with git init-ed for you as well.
 
 ### Documentation
 More documentation regarding deployment/usage can be found in the [README.md](blueprints/default/files/README.md) of your newly created project folder.
