@@ -1,24 +1,24 @@
 {
 	"defaults": {
-		"app_name": "Whitesmith",
+		"app_name": "<%= project_name %>",
 		"keywords": "iot",
-		"author"  : "Whitesmith",
-		"domain"  : "http://whitesmith.github.io/quickie/",
+		"author"  : "",
+		"domain"  : "",
 		"logo": "path_to_logo",
 		"og": {
-			"site_name": "Whitesmith"
+			"site_name": "<%= project_name %>"
 		},
 		"social": {
-			"fb_app_id": "@whitesmithco",
-			"fb_twitter_site": "@whitesmithco"
+			"fb_app_id": "",
+			"fb_twitter_site": ""
 		}
 	},
 	"pages": [
     	{
 	      "slug"           : "index",
 	      "name"           : "Home",
-	      "title"          : "Welcome home — Whitesmith Quickie",
-	      "description"    : "Static sites like a bauss",
+	      "title"          : "Welcome home — <%= project_name %>",
+	      "description"    : "Generated with Qnorr",
 	      "og_title"       : "optional, if you want a different page title for social media aka clickbait else default page title",
 	      "og_description" : "optional, if you want a different page description for social media  else default page description",
 	      "og_image"       : "asbolute_url_to_image_or_logo"
@@ -26,8 +26,8 @@
 	   {
 	      "slug"           : "this should match to filename without extension",
 	      "name"           : "A name that would be displayed on a menu",
-	      "title"          : "Unique title — Whitesmith Quickie",
-	      "description"    : "Unique description fot the page",
+	      "title"          : "Unique title",
+	      "description"    : "Unique description for the page",
 	      "og_title"       : "optional, if you want a different page title for social media aka clickbait else default page title",
 	      "og_description" : "optional, if you want a different page description for social media  else default page description",
 	      "og_image"       : "asbolute_url_to_image_or_logo, defaults to defaults.logo"

@@ -1,0 +1,18 @@
+#! /usr/bin/env node
+'use strict';
+
+// Provide a title to the process in `ps`
+process.title = 'qnorr';
+
+const exit = require('exit');
+const tasks = require('require-all')(__dirname + '/../lib/tasks');
+
+if(!process.argv[2] || !(process.argv[2] in tasks)) {
+  console.error("Please specify a valid command. Use `qnorr help` for a list of valid commands.");
+  exit(1);
+} else {
+  let task = tasks[process.argv[2]];
+  let extra_args = process.argv.slice(3);
+
+  task.handler(extra_args);
+}
