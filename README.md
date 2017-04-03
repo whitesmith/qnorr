@@ -9,7 +9,7 @@ Right now is just a non-modular starter kit, but we'll get there.
 
 ### Installation
 ```
-npm install qnorr
+npm install -g qnorr
 ```
 
 ### Usage
