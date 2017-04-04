@@ -24,7 +24,7 @@ In future quick overview guides will be created for some specific packages (Temp
 
 | Feature                                      | Summary                                                                                                                                                              |
 |----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Responsive boilerplate                       | Inherits all the *good parts* of your also good ol'friend [Sassqit](https://github.com/whitesmith/sassqit) aligned with current Whitesmith Best Practivces |
+| Responsive boilerplate                       | Inherits all the *good parts* of your also good ol'friend [Sassqit](https://github.com/whitesmith/sassqit) aligned with current Whitesmith Best Practices |
 | HandleBars Templating                        | Using [`Panini`](https://github.com/zurb/panini) from Zurb.|
 | Sass Handling                                | Using `LibSass` with `gulp-sass`|
 | Performance optimization                     | Minify and concatenate JavaScript, CSS, HTML and images to help keep your pages lean. |
