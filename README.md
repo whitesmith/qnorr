@@ -8,8 +8,28 @@ Right now is just a non-modular starter kit, but we'll get there.
 1. Node `>=v6.10.0` and `npm`.
 
 ### Installation
+
+##### From `npm`
 ```
 npm install -g qnorr
+```
+
+#####
+ Directly [from gitHub](https://stackoverflow.com/questions/17509669/how-to-install-an-npm-package-from-github-directly):
+using ssh:
+```bash
+
+npm install -g git+ssh://git@github.com:whitesmith/qnorr.git 
+```
+
+using https:
+```
+npm install -g git+https://git@github.com:whitesmith/qnorr.git
+```
+
+or directly:
+```
+npm install -g https://github.com/whitesmith/qnorr
 ```
 
 ### Usage
